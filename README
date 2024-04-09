@@ -1,0 +1,12 @@
+# tool for adb
+makr sure tk and virtualenv is installed
+
+python -m venv adb
+
+# linux
+and then, source adb/bin/activate
+in fish source adb/bin/activate.fish
+
+# windows 
+env/Scripts/activate.bat //In CMD
+env/Scripts/Activate.ps1 //In Powershel
