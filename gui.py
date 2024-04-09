@@ -5,7 +5,8 @@ from turtle import left
 #const
 adb_download = "https://dl.google.com/android/repository/platform-tools-latest-linux.zip"
 zip_file = "adb.zip"
-extract_folder = "adbb"
+extract_folder = "adb"
+adb = ""
 
 #def
 #downlaod adb
@@ -34,4 +35,5 @@ button.pack(anchor="ne")
 # configs
 main.geometry("400x300")
 main.tk_setPalette("#282C34")
+main.title("ADB Tools")
 main.mainloop()
