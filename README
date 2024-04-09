@@ -1,7 +1,7 @@
 # tool for adb
 makr sure tk and virtualenv is installed
 
-python -m venv adb
+python -m venv venv
 
 # linux
 and then, source adb/bin/activate
