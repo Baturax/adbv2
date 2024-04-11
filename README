@@ -1,12 +1,12 @@
 # tool for adb
-make sure tk and virtualenv is installed  (in windows it should come installed, in linux you can install it using your package manager. iepacman -S python-virtualenv)
+make sure tk and virtualenv is installed  (in windows it should come installed, in linux you can install it using your package manager. iepacman -S python-virtualenv n pacman -S python-tkinter)
 
 python -m venv venv
 
 # linux
-and then, source adb/bin/activate
-in fish source adb/bin/activate.fish
+and then, source venv/bin/activate
+in fish, source venv/bin/activate.fish
 
 # windows 
-env/Scripts/activate.bat //In CMD
-env/Scripts/Activate.ps1 //In Powershel
+venv/Scripts/activate.bat //In CMD
+venv/Scripts/Activate.ps1 //In Powershel
