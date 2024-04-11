@@ -1,5 +1,5 @@
 # tool for adb
-make sure tk and virtualenv is installed  (in windows it should come installed, in linux you can install it using your package manager. ie pacman -S python(3)-virtualenv n pacman -S python(3)-tkinter)
+make sure wget, tk and virtualenv is installed  (in windows it should come installed, in linux you can install it using your package manager. ie pacman -S python3-virtualenv python3-tkinter wget)
 
 python -m venv venv
 
