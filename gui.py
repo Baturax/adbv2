@@ -26,7 +26,7 @@ def download_adb():
 #adb tools
 #adb devices
 def adb_devices():
-    subprocess.run(["adb", "devices"])
+    subprocess.run([adb, "devices"])
 #adb push
 def adb_push ():
     filename = filedialog.askopenfilename()
