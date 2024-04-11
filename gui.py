@@ -1,14 +1,15 @@
 import tkinter as tk
+from tkinter import ttk, filedialog, Label, Button, Tk
 import subprocess
-from turtle import left
 
 #const
 adb_download = "https://dl.google.com/android/repository/platform-tools-latest-linux.zip"
 zip_file = "adb.zip"
 extract_folder = "adb"
-adb = ""
+adb = "adb/adb"
 
 #def
+
 #downlaod adb
 def download_adb():
     # Dosyayı indirme
@@ -21,19 +22,31 @@ def download_adb():
         print("downloaded successfully")
         subprocess.run(["rm", zip_file])
 
+
 #adb tools
-def adb_tools():
+#adb devices
+def adb_devices():
     subprocess.run(["adb", "devices"])
+#adb push
+def adb_push ():
+    filename = filedialog.askopenfilename()
 
 
-#tkinter
-main = tk.Tk()
+#"tkinter"
+root = Tk()
 
-button = tk.Button(main, text="Download ADB", bg="white", fg="#282C34", command=download_adb)
-button.pack(anchor="ne")
 
-# configs
-main.geometry("400x300")
-main.tk_setPalette("#282C34")
-main.title("ADB Tools")
-main.mainloop()
+# This is the section of code which creates the main window
+root.geometry('632x295')
+root.configure(background='#8B4513')
+root.title('ADB Tools')
+
+Label(root, text='ADB Tools', bg='#8B4513', font=('arial', 14, 'normal')).place(x=2, y=5)
+
+Button(root, text='ADB Devices', bg='#FFFFFF', font=('arial', 12, 'normal'), command=adb_devices).place(x=2, y=40)
+
+Button(root, text='ADB Push', bg='#FFFFFF', font=('arial', 12, 'normal')).place(x=2, y=75)
+
+Button(root, text='Download ADB', bg='#FFFFFF', font=('arial', 12, 'normal'), command=download_adb).place(x=502, y=5)
+
+root.mainloop()
