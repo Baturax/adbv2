@@ -3,7 +3,7 @@ make sure tk and virtualenv is installed  (in windows it should come installed, 
 
 python -m venv venv
 
-# linux
+# linuxvenv
 and then, source venv/bin/activate
 in fish, source venv/bin/activate.fish
 
