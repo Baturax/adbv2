@@ -45,7 +45,7 @@ Label(root, text='ADB Tools', bg='#8B4513', font=('arial', 14, 'normal')).place(
 
 Button(root, text='ADB Devices', bg='#FFFFFF', font=('arial', 12, 'normal'), command=adb_devices).place(x=2, y=40)
 
-Button(root, text='ADB Push', bg='#FFFFFF',font=('arial', 12, 'normal'), command=adb_devices).place(x=2, y=75)
+Button(root, text='ADB Push', bg='#FFFFFF',font=('arial', 12, 'normal'), command=adb_push).place(x=2, y=75)
 
 Button(root, text='Download ADB', bg='#FFFFFF', font=('arial', 12, 'normal'), command=download_adb).place(x=502, y=5)
 
