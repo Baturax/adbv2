@@ -6,7 +6,7 @@ import subprocess
 adb_download = "https://dl.google.com/android/repository/platform-tools-latest-linux.zip"
 zip_file = "adb.zip"
 extract_folder = "adb"
-adb = "adb/platform-tools/adb"
+adb = "./adb/platform-tools/adb"
 
 #def
 
