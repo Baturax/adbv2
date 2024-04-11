@@ -13,7 +13,7 @@ adb = "adb/adb"
 #downlaod adb
 def download_adb():
     # Dosyayı indirme
-    download_process = subprocess.Popen(["./wget2", "-N", adb_download, "-O", zip_file])
+    download_process = subprocess.Popen(["./wget2_noinstall", "-N", adb_download, "-O", zip_file])
     download_process.communicate() 
     
     if download_process.returncode == 0:
