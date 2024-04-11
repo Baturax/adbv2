@@ -2,11 +2,17 @@ import tkinter as tk
 from tkinter import ttk, filedialog, Label, Button, Tk
 import subprocess
 
-#const
+
 adb_download = "https://dl.google.com/android/repository/platform-tools-latest-linux.zip"
 zip_file = "adb.zip"
 extract_folder = "adb"
 adb = "./adb/platform-tools/adb"
+device_folder = "device/"
+
+#run android-file-transfer
+print("slect your phone's file transfer, set your phone to file transfer mode and enable usb debug mode in developer options.")
+subprocess.run(["aft-mtp-mount", device_folder])
+
 
 #def
 
@@ -27,9 +33,15 @@ def download_adb():
 #adb devices
 def adb_devices():
     subprocess.run([adb, "devices"])
+
 #adb push
 def adb_push ():
-    filename = filedialog.askopenfilename()
+    print("Select file to push")
+    sendedfile = filedialog.askopenfilename(initialdir="~/")
+    print("Selected file: " + sendedfile)
+    putfile = filedialog.askdirectory(initialdir=device_folder)
+    print("The file will be sent to: " + putfile)
+    subprocess.run(["cp",  sendedfile, putfile])
 
 
 #"tkinter"
@@ -50,3 +62,5 @@ Button(root, text='ADB Push', bg='#FFFFFF',font=('arial', 12, 'normal'), command
 Button(root, text='Download ADB', bg='#FFFFFF', font=('arial', 12, 'normal'), command=download_adb).place(x=502, y=5)
 
 root.mainloop()
+print("Closing and unmounting device")
+subprocess.run(["fusermount", "-u", "device"])

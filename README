@@ -1,12 +1,9 @@
 # tool for adb
-make sure wget, tk and virtualenv is installed  (in windows it should come installed, in linux you can install it using your package manager. ie pacman -S python3-virtualenv python3-tkinter wget)
+make sure wget, tk, android-file-transfer and virtualenv is installed  (in linux you can install it using your package manager. ie pacman -S python3-virtualenv python3-tkinter wget android-file-transfer)
 
 python -m venv venv
 
 # linuxvenv
-and then, source venv/bin/activate
+and then, 
+source venv/bin/activate
 in fish, source venv/bin/activate.fish
-
-# windows 
-venv/Scripts/activate.bat //In CMD
-venv/Scripts/Activate.ps1 //In Powershel
