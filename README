@@ -1,5 +1,5 @@
 # tool for adb
-makr sure tk and virtualenv is installed
+make sure tk and virtualenv is installed  (in windows it should come installed, in linux you can install it using your package manager. iepacman -S python-virtualenv)
 
 python -m venv venv
 
