@@ -88,7 +88,7 @@ Button(root, text='Reboot Recovery', bg='#FFFFFF', font=('arial', 12, 'normal'),
 Button(root, text='Reboot Bootloader', bg='#FFFFFF', font=('arial', 12, 'normal'), command=rebootbootloader).place(x=2, y=265)
 
 
-Button(root, text='Download ADB', bg='#FFFFFF', font=('arial', 12, 'normal'), command=download_adb).place(x=502, y=5)
+Button(root, text='Download ADB', bg='#FFFFFF', font=('arial', 12, 'normal'), command=download_adb).place(x=550, y=5)
 
 root.mainloop()
 print("Closing and unmounting device")
