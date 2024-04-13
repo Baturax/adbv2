@@ -35,13 +35,30 @@ def adb_devices():
     subprocess.run([adb, "devices"])
 
 #adb push
-def adb_push ():
+def push ():
     print("Select file to push")
-    sendedfile = filedialog.askopenfilename(initialdir="~/")
-    print("Selected file: " + sendedfile)
-    putfile = filedialog.askdirectory(initialdir=device_folder)
-    print("The file will be sent to: " + putfile)
-    subprocess.run(["cp",  sendedfile, putfile])
+    pushedfile = filedialog.askopenfilename(initialdir="~/")
+    print("Selected file: " + pushedfile)
+    wherepushed = filedialog.askdirectory(initialdir=device_folder)
+    print("The file will be pushed to: " + wherepushed)
+    subprocess.run(["cp",  pushedfile, wherepushed])
+#adb pull
+def pull():
+    print("Select file to pull")
+    pulledfile = filedialog.askopenfilename(initialdir=device_folder)
+    print("Selected file: " + pulledfile)
+    wherepulled = filedialog.askdirectory(initialdir="~/")
+    print("The file will be pulled to: " + wherepulled)
+    subprocess.run(["cp",  pulledfile, wherepulled])
+
+#adb reboot
+def rebootdevice():
+    subprocess.run([adb, "reboot"])
+def rebootrecovery():
+    subprocess.run([adb, "reboot", "recovery"])
+def rebootbootloader():
+    subprocess.run([adb, "reboot", "bootloader"])
+
 
 
 #"tkinter"
@@ -49,7 +66,7 @@ root = Tk()
 
 
 # This is the section of code which creates the main window
-root.geometry('632x295')
+root.geometry('700x500')
 root.configure(background='#8B4513')
 root.title('ADB Tools')
 
@@ -57,10 +74,23 @@ Label(root, text='ADB Tools', bg='#8B4513', font=('arial', 14, 'normal')).place(
 
 Button(root, text='ADB Devices', bg='#FFFFFF', font=('arial', 12, 'normal'), command=adb_devices).place(x=2, y=40)
 
-Button(root, text='ADB Push', bg='#FFFFFF',font=('arial', 12, 'normal'), command=adb_push).place(x=2, y=75)
+Button(root, text='ADB Push', bg='#FFFFFF',font=('arial', 12, 'normal'), command=push).place(x=2, y=75)
+
+Button(root, text='ADB Pull', bg='#FFFFFF', font=('arial', 12, 'normal'), command=pull).place(x=2, y=110)
+
+#yok
+Label(root, text='ADB Download', bg='#8B4513', font=('arial', 14, 'normal')).place(x=2, y=160)
+
+Button(root, text='Restart Device', bg='#FFFFFF', font=('arial', 12, 'normal'), command=rebootdevice).place(x=2, y=195)
+
+Button(root, text='Reboot Recovery', bg='#FFFFFF', font=('arial', 12, 'normal'), command=rebootrecovery).place(x=2, y=230)
+
+Button(root, text='Reboot Bootloader', bg='#FFFFFF', font=('arial', 12, 'normal'), command=rebootbootloader).place(x=2, y=265)
+
 
 Button(root, text='Download ADB', bg='#FFFFFF', font=('arial', 12, 'normal'), command=download_adb).place(x=502, y=5)
 
 root.mainloop()
 print("Closing and unmounting device")
 subprocess.run(["fusermount", "-u", "device"])
+print("Unmounted device")
