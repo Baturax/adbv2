@@ -74,9 +74,9 @@ Label(root, text='ADB Tools', bg='#8B4513', font=('arial', 14, 'normal')).place(
 
 Button(root, text='ADB Devices', bg='#FFFFFF', font=('arial', 12, 'normal'), command=adb_devices).place(x=2, y=40)
 
-Button(root, text='ADB Push', bg='#FFFFFF',font=('arial', 12, 'normal'), command=push).place(x=2, y=75)
+Button(root, text='Push File', bg='#FFFFFF',font=('arial', 12, 'normal'), command=push).place(x=2, y=75)
 
-Button(root, text='ADB Pull', bg='#FFFFFF', font=('arial', 12, 'normal'), command=pull).place(x=2, y=110)
+Button(root, text='Pull Folder', bg='#FFFFFF', font=('arial', 12, 'normal'), command=pull).place(x=2, y=110)
 
 #yok
 Label(root, text='ADB Download', bg='#8B4513', font=('arial', 14, 'normal')).place(x=2, y=160)
